@@ -1,23 +1,19 @@
 #!/usr/bin/env python3
 
 import json
-import sys
 
-jsonfile_loc = "nv-vk64.json"
-samplefile_loc = "sample.txt"
-#file = os.open(jsonfile_loc)
+path = "C:\dev\gloss.json"
 
-with open(jsonfile_loc, newline='') as jsonfile:
-    json_content = jsonfile.read()
+with open(path, newline='') as f:
+    text = f.read()
 
-print(json_content)
+# Printing the raw text found in JSON file
+# print(json_content)
 
-jsoncontent = json.loads(json_content)
+data_json_dict = json.loads(text)
 
-#print(type(jsoncontent))
-
-for key in jsoncontent:
-    print(jsoncontent[key])
+for key in data_json_dict:
+    print(data_json_dict[key])
 
 
 
