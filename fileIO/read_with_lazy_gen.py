@@ -11,3 +11,4 @@ filename = 'C:\dism.log'
 
 for line in open(filename):
     print(line)
+    break

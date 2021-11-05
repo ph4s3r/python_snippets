@@ -1,6 +1,8 @@
 """
 
-This snippet is to read a csv file from the machine and process it
+Reading csv file with builtin methods from the machine and process it
+
+I`d rather opt for pandas when processing data
 
 """
 

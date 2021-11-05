@@ -1,5 +1,7 @@
+""" This module reads config files and parses them into a dictionary"""
+
 from pathlib import Path
-import os
+
 
 def testforPath(configfile_location: str):
 
@@ -11,6 +13,7 @@ def testforPath(configfile_location: str):
             print("Provide the new path please: \n")
             configfile_location = input()
             configfile_location = testforPath(Path(configfile_location))
+            return configfile_location
         else:
             print("Adios!")
             exit(0)
@@ -19,15 +22,23 @@ def testforPath(configfile_location: str):
         return configfile_location
 
 
+def parseConfig(path: Path, separator: str = '=') -> None:
 
-def parseConfig():
-    with open(p: , 'rt') as cfgfile:
-        for line in cfgfile.readline():
-            print(line)
+    """ Reading the config file and putting every key and value to a dict """
+
+    confdict = dict()
+
+    with open(path, 'rt') as cfgfile:
+        config = cfgfile.readlines()
+        for celem in config:
+            k, v = celem.strip().split(separator)
+            confdict[k.strip()] = v
+
+    print(confdict)
 
 
 if __name__ == '__main__':
 
-    c = Path('config1.cfg')
+    c = Path('config.cfg')
     c = testforPath(c)
     parseConfig(c)
