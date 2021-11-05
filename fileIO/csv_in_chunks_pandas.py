@@ -1,8 +1,11 @@
 import pandas as pd
+from pathlib import Path
 
-filename = '/home/ubuntu/data.csv'
-chunksize = 10000
+p = Path("C:/dev/au20.csv")
+chunksize = 10
+print(p)
 
-for chunk in pd.read_csv(filename, chunksize=chunksize):
-    # process chunk
-    print(chunk)
+with pd.read_csv(p, chunksize=chunksize) as reader:
+    for chunk in reader:
+        print(chunk)
+        break

@@ -6,8 +6,9 @@ This snippet is to read a csv file from the machine and process it
 
 import os
 import csv
+from pathlib import Path
 
-path = 'C:\dev\stocks.csv'
+path = Path('C:\dev\stocks.csv')
 
 if os.path.exists(path):
     with open(path) as f:
