@@ -1,9 +1,24 @@
 """
+
+
 APIs
 Parse the response body and look for messages in each commit, and group by them for the count.
 website URL: https://api.github.com/events
 
 Please add the exception handler
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 answer)
 
